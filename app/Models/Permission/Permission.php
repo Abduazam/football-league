@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  */
-class Permission extends Model
+final class Permission extends Model
 {
     use HasFactory, RelationsTrait;
 

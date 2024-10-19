@@ -15,6 +15,7 @@ class LocalDatabaseSeeder extends Seeder
             \Database\Seeders\Management\RoleSeeder::class,
             \Database\Seeders\Management\UserSeeder::class,
             \Database\Seeders\Management\PermissionSeeder::class,
+            \Database\Seeders\Information\SportSeeder::class
         ]);
     }
 }

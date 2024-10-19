@@ -2,9 +2,11 @@
 
 namespace App\Providers\Filament;
 
+use App\Contracts\Enums\Navigation\NavigationGroupEnum;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\NavigationGroup;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -32,6 +34,10 @@ class DashboardPanelProvider extends PanelProvider
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
+            ->navigationGroups([
+                NavigationGroup::make(NavigationGroupEnum::MANAGEMENT->value)->icon('heroicon-o-command-line'),
+                NavigationGroup::make(NavigationGroupEnum::INFORMATION->value)->icon('heroicon-o-information-circle'),
+            ])
             ->pages([
                 Pages\Dashboard::class,
             ])

@@ -27,7 +27,7 @@ use Illuminate\Notifications\Notifiable;
  * Relations
  * @property Role $role
  */
-class User extends Authenticatable
+final class User extends Authenticatable
 {
     use HasFactory, Notifiable, RelationsTrait, HasAccessTrait, SoftDeletes;
 
